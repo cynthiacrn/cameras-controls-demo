@@ -64,9 +64,9 @@ const scene = new THREE.Scene()
 scene.background = new THREE.Color('#ffd6ff')
 scene.fog = new THREE.FogExp2( '#ffd6ff', 0.002 )
 
-// Object
-const geometry = new THREE.CylinderGeometry( 8, 8, 24, 16 )
-const material = new THREE.MeshPhongMaterial( { color: '#FFADFF', flatShading: true } )
+// Objects
+const geometry = new THREE.CylinderGeometry(8, 8, 24, 16)
+const material = new THREE.MeshPhongMaterial({ color: '#FFADFF', flatShading: true })
 const mesh = new THREE.Mesh(geometry, material)
 scene.add(mesh)
 

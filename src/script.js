@@ -62,7 +62,7 @@ window.addEventListener('dblclick', () => {
 // Scene
 const scene = new THREE.Scene()
 scene.background = new THREE.Color('#ffd6ff')
-scene.fog = new THREE.FogExp2( '#ffd6ff', 0.002 )
+scene.fog = new THREE.FogExp2('#ffd6ff', 0.002)
 
 // Objects
 const geometry = new THREE.CylinderGeometry(8, 8, 24, 16)
@@ -70,27 +70,27 @@ const material = new THREE.MeshPhongMaterial({ color: '#FFADFF', flatShading: tr
 const mesh = new THREE.Mesh(geometry, material)
 scene.add(mesh)
 
-for ( let i = 0; i < 500; i ++ ) {
-  const mesh = new THREE.Mesh( geometry, material )
-  mesh.position.x = ( Math.random() - 0.5 ) * 1000
-  mesh.position.y = ( Math.random() - 0.5 ) * 1000
-  mesh.position.z = ( Math.random() - 0.5 ) * 1000
+for (let i = 0; i < 500; i ++) {
+  const mesh = new THREE.Mesh(geometry, material)
+  mesh.position.x = (Math.random() - 0.5) * 1000
+  mesh.position.y = (Math.random() - 0.5) * 1000
+  mesh.position.z = (Math.random() - 0.5) * 1000
   mesh.updateMatrix()
   mesh.matrixAutoUpdate = false
-  scene.add( mesh )
+  scene.add(mesh)
 }
 
 // Lights
-const dirLight1 = new THREE.DirectionalLight( 0xffffff, 3 )
-dirLight1.position.set( 1, 1, 1 )
-scene.add( dirLight1 )
+const dirLight1 = new THREE.DirectionalLight(0xffffff, 3)
+dirLight1.position.set(1, 1, 1)
+scene.add(dirLight1)
 
-const dirLight2 = new THREE.DirectionalLight( '#520052', 3 )
-dirLight2.position.set( - 1, - 1, - 1 )
-scene.add( dirLight2 )
+const dirLight2 = new THREE.DirectionalLight('#520052', 3)
+dirLight2.position.set(- 1, - 1, - 1)
+scene.add(dirLight2)
 
-const ambientLight = new THREE.AmbientLight( '#555555' )
-scene.add( ambientLight )
+const ambientLight = new THREE.AmbientLight('#555555')
+scene.add(ambientLight)
 
 // Cameras
 const perspectiveCamera = new THREE.PerspectiveCamera(60, sizes.width / sizes.height, 1, 1000)
@@ -132,7 +132,7 @@ gui.add(params, 'orthographicCamera').name('Use Orthographic').onChange((value) 
 
 // Renderer
 const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true })
-renderer.setPixelRatio( window.devicePixelRatio )
+renderer.setPixelRatio(window.devicePixelRatio)
 renderer.setSize(sizes.width, sizes.height)
 
 const tick = () => {

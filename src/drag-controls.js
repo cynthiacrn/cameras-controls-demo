@@ -61,7 +61,7 @@ const geometry = new THREE.ConeGeometry(0.4, 1, 32)
 
 for (let i = 0; i < 200; i ++) {
 
-  const object = new THREE.Mesh(geometry, new THREE.MeshLambertMaterial( { color: Math.random() * 0xffffff }))
+  const object = new THREE.Mesh(geometry, new THREE.MeshLambertMaterial({ color: Math.random() * 0xffffff }))
 
   object.position.x = Math.random() * 30 - 15
   object.position.y = Math.random() * 15 - 7.5
@@ -87,7 +87,7 @@ for (let i = 0; i < 200; i ++) {
 // Lights
 scene.add(new THREE.AmbientLight(0xaaaaaa))
 const light = new THREE.SpotLight(0xf0f0f0, 2)
-light.position.set( 0, 25, 50 )
+light.position.set(0, 25, 50)
 light.angle = Math.PI / 9
 
 light.castShadow = true
@@ -106,13 +106,13 @@ scene.add(camera)
 
 // Renderer
 const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true })
-renderer.setPixelRatio( window.devicePixelRatio )
+renderer.setPixelRatio(window.devicePixelRatio)
 renderer.setSize(sizes.width, sizes.height)
 renderer.shadowMap.enabled = true
 renderer.shadowMap.type = THREE.PCFShadowMap
 
 // Controls
-const controls = new DragControls( [ ... objects ], camera, renderer.domElement )
+const controls = new DragControls([ ... objects ], camera, renderer.domElement)
 controls.rotateSpeed = 2
 
 const tick = () => {

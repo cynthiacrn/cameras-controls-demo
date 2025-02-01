@@ -4,8 +4,8 @@ import { FirstPersonControls } from 'three/addons/controls/FirstPersonControls.j
 const controls = {}
 const player = {
   height: 0.5,
-  turnSpeed: 0.07,
-  speed: 0.07,
+  turnSpeed: 0.02,
+  speed: 0.05,
   jumpHeight: 0.2 ,
   gravity: 0.01,
   velocity: 0,

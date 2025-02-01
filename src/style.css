@@ -24,44 +24,48 @@ body
 
 .first-person-controls__key-controls-container {
   position: absolute;
-  bottom: 0;
+  top: 0;
   z-index: 99999;
-  color: #66666680;
+  color: #666666;
   width: 100%;
   padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
 }
 
-.first-person-controls__key-controls-container:hover {
-  color: #666666;
+.first-person-controls__title {
+  font-size: 18px;
 }
 
 .first-person-controls__key-controls {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  justify-content: start;
   width: fit-content;
   gap: 16px;
+  font-size: 14px;
 }
 
-.first-person-controls__key-controls-w, .first-person-controls__key-controls-a, .first-person-controls__key-controls-s, .first-person-controls__key-controls-d {
+.first-person-controls__key, .first-person-controls__space-key {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: solid 2px #66666680;
+  border: solid 2px #666666;
   width: 24px;
   height: 24px;
   padding: 12px;
   border-radius: 4px;
-  cursor: pointer;
+  text-transform: uppercase;
 }
 
-.first-person-controls__key-controls-w:hover, .first-person-controls__key-controls-a:hover, .first-person-controls__key-controls-s:hover, .first-person-controls__key-controls-d:hover {
-  border: solid 2px #666666;
+.first-person-controls__space-key {
+  width: 46px;
 }
 
-.first-person-controls__key-controls-asd {
+.first-person-controls__key-controls-content {
   display: flex;
   flex-direction: row;
+  align-items: center;
   gap: 16px;
 }

@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>threejs - FlyControls</title>
+  <title>Threejs - FlyControls</title>
   <link rel="stylesheet" href="./style.css">
 </head>
 <body class="controls__body">
 <canvas class="webgl-fly-controls"></canvas>
 <div class="controls__key-controls-container">
-  <h1 class="controls__tile">
+  <h1 class="controls__title">
     Fly Controls
   </h1>
   <p class="controls__description">
@@ -65,6 +65,17 @@
       <div class="controls__legend">Look down</div>
     </div>
   </div>
+</div>
+<div class="controls__navigation-container">
+  <p class="controls__navigation-title">Menu:</p>
+  <nav class="controls__navigation">
+    <ul>
+      <li><a class="controls__navigation-link" href="index.html">Trackball Controls</a></li>
+      <li><a class="controls__navigation-link" href="drag-controls.html">Drag Controls</a></li>
+      <li><a class="controls__navigation-link" href="first-person-controls.html">First Person Controls</a></li>
+      <li><a class="controls__navigation-link" href="fly-controls.html">Fly Controls</a></li>
+    </ul>
+  </nav>
 </div>
 <script type="module" src="./fly-controls.js"></script>
 </body>

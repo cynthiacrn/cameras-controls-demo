@@ -1,11 +1,9 @@
-*
-{
+* {
   margin: 0;
   padding: 0;
 }
 
-.webgl
-{
+.webgl {
   position: fixed;
   top: 0;
   left: 0;
@@ -13,8 +11,7 @@
 }
 
 html,
-body
-{
+body {
   overflow: hidden;
 }
 
@@ -25,8 +22,7 @@ body
 .controls__key-controls-container {
   position: absolute;
   top: 0;
-  z-index: 0;
-  color: #666666;
+  color: #FFADFF;
   width: 100%;
   padding: 24px;
   display: flex;
@@ -34,16 +30,12 @@ body
   gap: 24px;
 }
 
-.lil-gui {
-  z-index: 1000 !important;
-}
-
-.controls__tile {
+.controls__title {
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  z-index: 1;
+  color: #44aa88;
 }
 
 .controls__description {
@@ -63,7 +55,7 @@ body
   display: flex;
   justify-content: center;
   align-items: center;
-  border: solid 2px #666666;
+  border: solid 2px #FFADFF;
   width: 24px;
   height: 24px;
   padding: 12px;
@@ -80,4 +72,40 @@ body
   flex-direction: row;
   align-items: center;
   gap: 16px;
+}
+
+.controls__navigation-container {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  gap: 16px;
+}
+
+.controls__navigation {
+  font-size: 16px;
+}
+
+.controls__navigation-title {
+  font-size: 22px;
+  color: #660066;
+}
+
+.controls__navigation ul {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  list-style-type: none;
+}
+
+.controls__navigation-link {
+  text-decoration: none;
+  color: #FFADFF;
+}
+
+.controls__navigation-link:hover {
+  text-decoration: none;
+  color: #e0e1dd;
 }

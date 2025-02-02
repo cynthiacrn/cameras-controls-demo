@@ -46,12 +46,12 @@ window.addEventListener('dblclick', () => {
 
 // Scene
 const scene = new THREE.Scene()
-scene.background = new THREE.Color('black')
-scene.fog = new THREE.FogExp2('#ffd6ff', 0.002)
+scene.background = new THREE.Color('#222222')
+scene.fog = new THREE.FogExp2('#222222', 0.002)
 
 // Objects
 const geometry = new THREE.BoxGeometry(1, 1, 1)
-const material = new THREE.MeshBasicMaterial({ color: '#FFADFF' })
+const material = new THREE.MeshBasicMaterial({ color: 0x44aa88 })
 const mesh = new THREE.Mesh(geometry, material)
 mesh.position.set(0, 1, -5)
 mesh.receiveShadow = true
@@ -74,7 +74,7 @@ light1.position.set(0, 3, 0)
 light1.castShadow = true
 scene.add(light1)
 
-let light2 = new THREE.AmbientLight("#ffd6ff", 0.15)
+let light2 = new THREE.AmbientLight(0x44aa88, 0.15)
 light2.position.set(10, 2, 0)
 scene.add(light2)
 

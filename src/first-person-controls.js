@@ -92,10 +92,12 @@ renderer.shadowMap.type = THREE.PCFSoftShadowMap
 
 // Controls (First Person)
 const controls = new FirstPersonControls(camera, canvas)
-controls.lookSpeed = 0.1
+controls.lookSpeed = 0
 controls.movementSpeed = 2
-controls.noFly = true // Empêche le vol
-controls.lookVertical = true // Active la vision verticale
+controls.noFly = true
+controls.autoForward = false
+controls.lookVertical = true
+controls.dragToLook = false
 
 /**
  * Animate

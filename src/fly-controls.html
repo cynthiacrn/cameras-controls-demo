@@ -6,8 +6,66 @@
   <title>threejs - FlyControls</title>
   <link rel="stylesheet" href="./style.css">
 </head>
-<body>
-<canvas class="webgl"></canvas>
+<body class="controls__body">
+<canvas class="webgl-fly-controls"></canvas>
+<div class="controls__key-controls-container">
+  <h1 class="controls__tile">
+    Fly Controls
+  </h1>
+  <p class="controls__description">
+    Only on desktop
+  </p>
+  <div class="controls__key-controls">
+    <div class="controls__key-controls-content">
+      <div class="controls__key">W</div>
+      <div class="controls__legend">Move forward</div>
+    </div>
+    <div class="controls__key-controls-content">
+      <div class="controls__key">S</div>
+      <div class="controls__legend">Move backward</div>
+    </div>
+    <div class="controls__key-controls-content">
+      <div class="controls__key">A</div>
+      <div class="controls__legend">Move left</div>
+    </div>
+    <div class="controls__key-controls-content">
+      <div class="controls__key">D</div>
+      <div class="controls__legend">Move right</div>
+    </div>
+    <div class="controls__key-controls-content">
+      <div class="controls__key">F</div>
+      <div class="controls__legend">Move down</div>
+    </div>
+    <div class="controls__key-controls-content">
+      <div class="controls__key">R</div>
+      <div class="controls__legend">Move up</div>
+    </div>
+    <div class="controls__key-controls-content">
+      <div class="controls__key">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-big-left"><path d="M18 15h-6v4l-7-7 7-7v4h6v6z"/></svg>
+      </div>
+      <div class="controls__legend">Look left</div>
+    </div>
+    <div class="controls__key-controls-content">
+      <div class="controls__key">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-big-right"><path d="M6 9h6V5l7 7-7 7v-4H6V9z"/></svg>
+      </div>
+      <div class="controls__legend">Look right</div>
+    </div>
+    <div class="controls__key-controls-content">
+      <div class="controls__key">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-big-up"><path d="M9 18v-6H5l7-7 7 7h-4v6H9z"/></svg>
+      </div>
+      <div class="controls__legend">Look up</div>
+    </div>
+    <div class="controls__key-controls-content">
+      <div class="controls__key">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-big-down"><path d="M15 6v6h4l-7 7-7-7h4V6h6z"/></svg>
+      </div>
+      <div class="controls__legend">Look down</div>
+    </div>
+  </div>
+</div>
 <script type="module" src="./fly-controls.js"></script>
 </body>
 </html>

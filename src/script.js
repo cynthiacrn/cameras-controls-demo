@@ -29,7 +29,6 @@ window.addEventListener('resize', () => {
   orthographicCamera.bottom = - 400 / 2
   orthographicCamera.updateProjectionMatrix()
 
-
   // Update renderer
   renderer.setSize(sizes.width, sizes.height)
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))

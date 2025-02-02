@@ -1,11 +1,11 @@
 import * as THREE from 'three'
-import { FirstPersonControls } from 'three/addons/controls/FirstPersonControls.js'
+import { FlyControls } from 'three/addons/controls/FlyControls.js'
 
 /**
  * Base
  */
 // Canvas
-const canvas = document.querySelector('canvas.webgl-first-person-controls')
+const canvas = document.querySelector('canvas.webgl-fly-controls')
 
 // Sizes
 const sizes = {
@@ -46,41 +46,33 @@ window.addEventListener('dblclick', () => {
 
 // Scene
 const scene = new THREE.Scene()
-scene.background = new THREE.Color('black')
-scene.fog = new THREE.FogExp2('#ffd6ff', 0.002)
+scene.background = new THREE.Color('#222222')
 
 // Objects
-const geometry = new THREE.BoxGeometry(1, 1, 1)
-const material = new THREE.MeshBasicMaterial({ color: '#FFADFF' })
-const mesh = new THREE.Mesh(geometry, material)
-mesh.position.set(0, 1, -5)
-mesh.receiveShadow = true
-mesh.castShadow = true
-scene.add(mesh)
+const geometry = new THREE.BoxGeometry(2, 2, 2)
+const material = new THREE.MeshStandardMaterial({ color: 0x44aa88 })
 
-const planeGeometry = new THREE.PlaneGeometry(10, 10)
-const planeMaterial = new THREE.MeshPhongMaterial({ color: "white", wireframe: false })
-const plane = new THREE.Mesh(planeGeometry, planeMaterial)
-
-plane.rotation.x -= Math.PI / 2
-plane.scale.x = 3
-plane.scale.y = 3
-plane.receiveShadow = true
-scene.add(plane)
+for (let i = 0; i < 100; i++) {
+  const cube = new THREE.Mesh(geometry, material)
+  cube.position.set(
+    (Math.random() - 0.5) * 100,
+    (Math.random() - 0.5) * 100,
+    (Math.random() - 0.5) * 100
+  )
+  scene.add(cube)
+}
 
 // Lights
-const light1 = new THREE.PointLight("white", 0.8)
-light1.position.set(0, 3, 0)
-light1.castShadow = true
-scene.add(light1)
+const light = new THREE.DirectionalLight(0xffffff, 1)
+light.position.set(5, 10, 5)
+scene.add(light)
 
-let light2 = new THREE.AmbientLight("#ffd6ff", 0.15)
-light2.position.set(10, 2, 0)
-scene.add(light2)
+const ambientLight = new THREE.AmbientLight(0x666666)
+scene.add(ambientLight)
 
 // Camera
-const camera = new THREE.PerspectiveCamera(65, sizes.width / sizes.height, 0.1, 1000)
-camera.position.set(0, 0.5, 5)
+const camera = new THREE.PerspectiveCamera(65, sizes.width / sizes.height, 0.1, 500)
+camera.position.set(0, 5, 10)
 scene.add(camera)
 
 // Renderer
@@ -88,14 +80,13 @@ const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true })
 renderer.setPixelRatio(window.devicePixelRatio)
 renderer.setSize(sizes.width, sizes.height)
 renderer.shadowMap.enabled = true
-renderer.shadowMap.type = THREE.PCFSoftShadowMap
 
-// Controls (First Person)
-const controls = new FirstPersonControls(camera, canvas)
-controls.lookSpeed = 0.1
-controls.movementSpeed = 2
-controls.noFly = true // Empêche le vol
-controls.lookVertical = true // Active la vision verticale
+// Controls
+const controls = new FlyControls(camera, canvas)
+controls.movementSpeed = 20
+controls.rollSpeed = Math.PI / 6
+controls.autoForward = false
+controls.dragToLook = true
 
 /**
  * Animate

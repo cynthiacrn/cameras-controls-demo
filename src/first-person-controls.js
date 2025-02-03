@@ -47,7 +47,6 @@ window.addEventListener('dblclick', () => {
 // Scene
 const scene = new THREE.Scene()
 scene.background = new THREE.Color('#222222')
-scene.fog = new THREE.FogExp2('#222222', 0.002)
 
 // Objects
 const geometry = new THREE.BoxGeometry(1, 1, 1)
@@ -59,7 +58,7 @@ mesh.castShadow = true
 scene.add(mesh)
 
 const planeGeometry = new THREE.PlaneGeometry(10, 10)
-const planeMaterial = new THREE.MeshPhongMaterial({ color: "white", wireframe: false })
+const planeMaterial = new THREE.MeshPhongMaterial({ color: "#707070", wireframe: false })
 const plane = new THREE.Mesh(planeGeometry, planeMaterial)
 
 plane.rotation.x -= Math.PI / 2

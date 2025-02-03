@@ -12,5 +12,12 @@ export default {
       outDir: '../dist',
       emptyOutDir: true,
       sourcemap: true,
+      rollupOptions: {
+        input: {
+          main: 'src/index.html',
+          'first-person-controls': 'src/first-person-controls.html',
+          'fly-controls': 'src/fly-controls.html',
+        },
+      },
     },
 }

@@ -4,15 +4,13 @@ export default {
     root: 'src/',
     publicDir: '../static/',
     base: './',
-    server:
-    {
+    server: {
         host: true,
-        open: !isCodeSandbox // Open if it's not a CodeSandbox
+        open: !isCodeSandbox
     },
-    build:
-    {
-        outDir: '../dist',
-        emptyOutDir: true,
-        sourcemap: true
-    }
+    build: {
+      outDir: '../dist',
+      emptyOutDir: true,
+      sourcemap: true,
+    },
 }
